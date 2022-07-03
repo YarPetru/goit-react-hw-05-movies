@@ -1,0 +1,33 @@
+.movieInfoContainer {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  /* justify-content: space-between; */
+  /* flex-direction: column; */
+}
+
+.poster {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.title {
+  font-size: 32px;
+  margin: 0 0 20px 0;
+}
+
+.termsList {
+  margin: 0px 0px 0px 20px;
+  /* padding: 20px; */
+}
+
+.term {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.definition {
+  font-size: 20px;
+  padding: 16px;
+}

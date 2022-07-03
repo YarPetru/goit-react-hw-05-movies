@@ -1,0 +1,44 @@
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.actorItem {
+  width: calc(100% / 5);
+  margin-top: 10px;
+}
+
+.actorItem:not(:last-child) {
+  margin-right: 10px;
+}
+
+.actorCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  height: 460px;
+  /* padding: 10px; */
+
+  border-radius: 8px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  /* width: 100%; */
+  /* width: 100%/3; */
+}
+
+.photo {
+  border-radius: 8px;
+  width: calc(100%);
+}
+
+.character {
+  margin: 0 0 10 0;
+  padding: 10px;
+}
+
+.name {
+  margin: 0;
+}
