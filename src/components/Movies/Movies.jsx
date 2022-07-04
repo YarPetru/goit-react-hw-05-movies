@@ -1,8 +1,7 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 
 const Movies = () => {
   return (
-    // ФОРМА ПОИСКА
     <>
       <h2>SEARCH FORM</h2>
     </>

@@ -1,15 +1,17 @@
 .castList {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: 4px;
 }
 
 .actorItem {
-  width: calc(100% / 5);
-  margin-top: 10px;
+  width: calc(100% / 6);
+  margin-top: 16px;
 }
 
 .actorItem:not(:last-child) {
-  margin-right: 10px;
+  margin-right: 1px;
 }
 
 .actorCard {
