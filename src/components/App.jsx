@@ -5,7 +5,7 @@ import {
   MoviesPage,
   MovieDetailsPage,
   CastPage,
-  ReviewPage,
+  // ReviewPage,
 } from '../pages';
 // import HomePage from '../pages/HomePage';
 // import MoviesPage from '../pages/MoviesPage';

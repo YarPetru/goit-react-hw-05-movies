@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
 
 import { getMovieDetails } from '../../services/api';
 import AdditionalInfo from './AdditionalInfo';
@@ -43,7 +43,7 @@ const MovieDetails = () => {
       <Link to="/">На главную</Link>
       {status === 'pending' && <Loader />}
       {status === 'rejected' && (
-        <p>{`There are no movies with id ${movieId}`}</p>
+        <p>{`There are no movies with id ${movieId}. Error: ${error}`}</p>
       )}
       {status === 'resolved' && (
         <>
