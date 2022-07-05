@@ -18,19 +18,17 @@ const GetMovieCast = () => {
         setStatus('pending');
         const cast = await getMovieCredits(movieId);
         setCast(cast);
-        setStatus('resolved');
-        const { height: cardHeight } = document
-          .querySelector('ul')
-          .getBoundingClientRect();
-
-        console.log(cardHeight);
-
-        window.scrollBy({
-          top: cardHeight * 8,
+        window.scrollTo({
+          top: document.documentElement.scrollHeight,
           behavior: 'smooth',
         });
-        // window.scrollTo({
-        //   top: document.documentElement.scrollHeight,
+        setStatus('resolved');
+        // const { height: cardHeight } = document
+        //   .querySelector('ul')
+        //   .getBoundingClientRect();
+
+        // window.scrollBy({
+        //   top: cardHeight,
         //   behavior: 'smooth',
         // });
       } catch (error) {

@@ -50,8 +50,13 @@ const MovieDetails = () => {
           <div className={s.movieInfoContainer}>
             <img
               className={s.poster}
-              src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+              src={
+                movie.poster_path
+                  ? `https://image.tmdb.org/t/p/w300/${movie.poster_path}`
+                  : 'https://usfa.gov.ua/upload/media/2021/02/12/6026697741202-602643405e0e780013efe006.jpg'
+              }
               alt="poster"
+              width="300px"
             />
 
             <dl className={s.termsList}>

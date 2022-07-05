@@ -3,18 +3,6 @@ import { lazy, Suspense } from 'react';
 
 import Layout from './Layout';
 
-// import {
-//   HomePage,
-//   MoviesPage,
-//   MovieDetailsPage,
-//   CastPage,
-//   ReviewsPage,
-// } from '../pages';
-
-// import HomePage from '../pages/HomePage';
-// import MoviesPage from '../pages/MoviesPage';
-// import MovieDetailsPage from '../pages/MovieDetailsPage';
-
 const lazyLoader = pageName => {
   return lazy(() =>
     import(`../pages/${pageName}`).then(module => ({

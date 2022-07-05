@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import { FcSearch } from 'react-icons/fc';
-import toast from 'react-hot-toast';
 
+import toast from 'react-hot-toast';
+import PropTypes from 'prop-types';
 import { getMovieByQuery } from 'services/api';
 import s from './Movies.module.css';
 import Loader from '../Loader';
+import SearchForm from 'components/SearchForm';
 
 // Query Function
 const GetSearchedMovie = q => {
@@ -20,11 +21,21 @@ const GetSearchedMovie = q => {
         const movies = await getMovieByQuery(q);
         setMovies(movies);
         setStatus('resolved');
+        movies.length === 0 &&
+          toast('There are no movies for this query. Please try another word', {
+            icon: '😓',
+            style: {
+              borderRadius: '10px',
+              background: '#333',
+              color: '#fff',
+            },
+          });
       } catch (error) {
         setStatus('rejected');
         setError(error);
       }
     };
+
     if (!!q) {
       fetchMovieByQuery();
     }
@@ -62,22 +73,11 @@ const Movies = () => {
 
   return (
     <>
-      <form className={s.form} onSubmit={handleSubmit}>
-        <button type="submit" className={s.button}>
-          <span className={s.buttonLabel}>Search</span>
-          <FcSearch />
-        </button>
-
-        <input
-          className={s.input}
-          type="text"
-          autoComplete="off"
-          value={query}
-          autoFocus
-          placeholder="Search images and photos"
-          onChange={handleInputChange}
-        />
-      </form>
+      <SearchForm
+        handleSubmit={handleSubmit}
+        handleInputChange={handleInputChange}
+        query={query}
+      />
       {status === 'pending' && <Loader />}
       {status === 'rejected' &&
         toast(
@@ -94,7 +94,7 @@ const Movies = () => {
       {status === 'resolved' && (
         <ul>
           {movies.map(movie => (
-            <li key={movie.id} className="movieItem">
+            <li key={movie.id} className={s.movieItem}>
               <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
             </li>
           ))}
@@ -102,6 +102,10 @@ const Movies = () => {
       )}
     </>
   );
+};
+
+GetSearchedMovie.propTypes = {
+  q: PropTypes.string.isRequired,
 };
 
 export default Movies;
