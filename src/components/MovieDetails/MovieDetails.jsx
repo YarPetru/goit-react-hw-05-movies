@@ -70,6 +70,7 @@ const MovieDetails = () => {
               <dd className={s.definition}>{movie.vote_average}</dd>
             </dl>
           </div>
+          <hr />
 
           <AdditionalInfo />
         </>

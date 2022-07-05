@@ -38,5 +38,5 @@ export const getMovieReviews = async movieid => {
   const response = await axios.get(
     `/movie/${movieid}/reviews?api_key=${APIKey}`
   );
-  return response.results;
+  return response.data.results;
 };

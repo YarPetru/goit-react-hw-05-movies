@@ -6,4 +6,4 @@ export * from './MovieDetailsPage';
 
 export * from './CastPage';
 
-export * from './ReviewPage';
+export * from './ReviewsPage';

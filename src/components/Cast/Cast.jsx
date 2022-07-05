@@ -19,10 +19,20 @@ const GetMovieCast = () => {
         const cast = await getMovieCredits(movieId);
         setCast(cast);
         setStatus('resolved');
-        window.scrollTo({
-          top: document.documentElement.scrollHeight,
+        const { height: cardHeight } = document
+          .querySelector('ul')
+          .getBoundingClientRect();
+
+        console.log(cardHeight);
+
+        window.scrollBy({
+          top: cardHeight * 8,
           behavior: 'smooth',
         });
+        // window.scrollTo({
+        //   top: document.documentElement.scrollHeight,
+        //   behavior: 'smooth',
+        // });
       } catch (error) {
         setError(error);
         setStatus('rejected');
