@@ -1,8 +1,8 @@
 import { SpinnerDotted } from 'spinners-react';
 
 const Loader = () => {
-  //   const color = '#ffffff';
-  return <SpinnerDotted color="red" />;
+  // const color = #5e3e53;
+  return <SpinnerDotted color="#5e3e53" />;
 };
 
 export default Loader;

@@ -1,18 +1,20 @@
 .castList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  padding-left: 4px;
+  /* justify-content: space-around; */
+  padding-left: 0px;
+  margin-top: calc(-1 * var(--main-gap));
+  margin-left: calc(-1 * var(--main-gap));
 }
 
 .actorItem {
-  width: calc(100% / 6);
-  margin-top: 16px;
+  flex-basis: calc(100% / 5 - var(--main-gap));
+  margin-top: var(--main-gap);
+  margin-left: var(--main-gap);
 }
 
-.actorItem:not(:last-child) {
-  margin-right: 1px;
-}
+/* .actorItem:not(:last-child) {
+} */
 
 .actorCard {
   display: flex;
@@ -20,20 +22,26 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 
   height: 460px;
-  /* padding: 10px; */
 
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  /* width: 100%; */
-  /* width: 100%/3; */
+
+  transition: var(--transition);
+}
+
+.actorCard:hover {
+  cursor: pointer;
+  transform: var(--scale);
+  box-shadow: var(--accent-shadow);
 }
 
 .photo {
-  border-radius: 8px;
-  width: calc(100%);
+  /* border-radius: var(--border-radius); */
+  width: 100%;
 }
 
 .character {

@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 import toast from 'react-hot-toast';
 import PropTypes from 'prop-types';
 import { getMovieByQuery } from 'services/api';
-import s from './Movies.module.css';
+
 import Loader from '../Loader';
 import SearchForm from 'components/SearchForm';
+import MoviesList from '../MoviesList';
 
 // Query Function
 const GetSearchedMovie = q => {
@@ -43,7 +44,6 @@ const GetSearchedMovie = q => {
   return { movies, status, error };
 };
 
-// common func for page - need to be devided
 const Movies = () => {
   const [query, setQuery] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
@@ -54,7 +54,7 @@ const Movies = () => {
   const handleSubmit = e => {
     e.preventDefault();
     if (query.trim() === '') {
-      return toast('Enter your query please', {
+      toast('Enter your query please', {
         icon: '😓',
         style: {
           borderRadius: '10px',
@@ -78,7 +78,9 @@ const Movies = () => {
         handleInputChange={handleInputChange}
         query={query}
       />
+
       {status === 'pending' && <Loader />}
+
       {status === 'rejected' &&
         toast(
           `Oops. Something went wrong. Please try again. ${error.message}`,
@@ -91,15 +93,7 @@ const Movies = () => {
             },
           }
         )}
-      {status === 'resolved' && (
-        <ul>
-          {movies.map(movie => (
-            <li key={movie.id} className={s.movieItem}>
-              <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
-            </li>
-          ))}
-        </ul>
-      )}
+      {status === 'resolved' && <MoviesList moviesArray={movies} />}
     </>
   );
 };

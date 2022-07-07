@@ -40,7 +40,6 @@ const MovieDetails = () => {
 
   return (
     <>
-      <Link to="/">На главную</Link>
       {status === 'pending' && <Loader />}
       {status === 'rejected' && (
         <p>{`There are no movies with id ${movieId}. Error: ${error}`}</p>
@@ -48,6 +47,9 @@ const MovieDetails = () => {
       {status === 'resolved' && (
         <>
           <div className={s.movieInfoContainer}>
+            <Link to="/" className={s.buttonLink}>
+              <span className={s.buttonLabel}>На главную</span>
+            </Link>
             <img
               className={s.poster}
               src={

@@ -19,6 +19,14 @@ const GetReviews = () => {
         const reviews = await getMovieReviews(movieId);
         console.log(reviews);
         setReviews(reviews);
+        const { height: cardHeight } = document
+          .querySelector('ul')
+          .getBoundingClientRect();
+
+        window.scrollBy({
+          top: cardHeight * 10,
+          behavior: 'smooth',
+        });
         setStatus('resolved');
       } catch (error) {
         setError(error);

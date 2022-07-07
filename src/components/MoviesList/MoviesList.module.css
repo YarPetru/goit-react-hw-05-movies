@@ -1,0 +1,23 @@
+.moviesList {
+  padding: 0px;
+}
+
+.movieItem {
+  font-size: var(--main-font-size);
+}
+
+.movieItem:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--main-font);
+  transition: var(--transition);
+}
+
+.link:focus,
+.link:hover {
+  color: var(--bright-accent);
+  /* font-size: 18px; */
+}
