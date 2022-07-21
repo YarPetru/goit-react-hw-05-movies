@@ -1,7 +1,6 @@
 .castList {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
   padding-left: 0px;
   margin-top: calc(-1 * var(--main-gap));
   margin-left: calc(-1 * var(--main-gap));
@@ -12,9 +11,6 @@
   margin-top: var(--main-gap);
   margin-left: var(--main-gap);
 }
-
-/* .actorItem:not(:last-child) {
-} */
 
 .actorCard {
   display: flex;
@@ -40,7 +36,6 @@
 }
 
 .photo {
-  /* border-radius: var(--border-radius); */
   width: 100%;
 }
 

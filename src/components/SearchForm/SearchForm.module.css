@@ -28,7 +28,6 @@
 }
 
 .input {
-  /* border: 2px solid var(--btn-color); */
   border-radius: var(--min-border-radius);
   font-family: var(--font);
   font-size: var(--main-font-size);

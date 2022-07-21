@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getMovieCredits } from '../../services/api';
 import toast from 'react-hot-toast';
 import Loader from 'components/Loader';
+import { getMovieCredits } from '../../services/api';
 import s from './Cast.module.css';
 
 const GetMovieCast = () => {

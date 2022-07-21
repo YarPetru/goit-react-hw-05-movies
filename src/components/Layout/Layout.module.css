@@ -10,19 +10,6 @@
   padding-right: 20px;
 }
 
-.link {
-  /* display: inline-block; */
-  text-decoration: none;
-  font-size: var(--medium-font-size);
-  font-weight: 500;
-  color: var(--dark-font);
-  transition: var(--transition);
-  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
-    0px -5px 35px rgba(255, 255, 255, 0.3);
-
-  /* font-weight: 600; */
-}
-
 .link:not(:last-child) {
   margin-right: 40px;
 }

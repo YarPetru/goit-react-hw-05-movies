@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { getTrendMovies } from '../../services/api';
 import toast from 'react-hot-toast';
+import { getTrendMovies } from '../../services/api';
 import Loader from '../Loader';
 import MoviesList from '../MoviesList';
 
@@ -19,11 +19,7 @@ const useFetchMovies = () => {
       } catch (error) {
         setError(error);
         setStatus('rejected');
-        // return;
       }
-      //   finally {
-      //     setStatus('resolved');
-      //   }
     };
 
     fetchMovies();

@@ -33,7 +33,6 @@ export const getMovieCredits = async movieid => {
 };
 
 // https://api.themoviedb.org/3/movie/453395/reviews?api_key=9cba2b56fa6de0f8781209edaebd8957
-
 export const getMovieReviews = async movieid => {
   const response = await axios.get(
     `/movie/${movieid}/reviews?api_key=${APIKey}`

@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 
 import toast from 'react-hot-toast';
 import PropTypes from 'prop-types';
+
 import { getMovieByQuery } from 'services/api';
 
 import Loader from '../Loader';

@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-// import toast from 'react-hot-toast';
-
-import { getMovieDetails } from '../../services/api';
+import { getMovieDetails } from 'services/api';
 import AdditionalInfo from './AdditionalInfo';
 import Loader from '../Loader';
 import s from './MovieDetails.module.css';
@@ -20,7 +18,6 @@ const useMovieDetails = () => {
         setStatus('pending');
         const movie = await getMovieDetails(movieId);
         setMovie(movie);
-        // console.log(movie);
         setStatus('resolved');
       } catch (error) {
         setError(error);
@@ -36,7 +33,6 @@ const useMovieDetails = () => {
 const MovieDetails = () => {
   const { status, error, movie } = useMovieDetails();
   const { movieId } = useParams();
-  //   const releaseYear = movie.release_date.split('-')[0];
 
   return (
     <>

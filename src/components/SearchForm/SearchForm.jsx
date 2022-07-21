@@ -1,6 +1,6 @@
-import s from './SearchForm.module.css';
-import PropTypes from 'prop-types';
 import { FcSearch } from 'react-icons/fc';
+import PropTypes from 'prop-types';
+import s from './SearchForm.module.css';
 
 const SearchForm = ({ handleSubmit, handleInputChange, query }) => {
   return (

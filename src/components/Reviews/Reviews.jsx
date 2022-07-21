@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import Loader from 'components/Loader';
+
 import { getMovieReviews } from '../../services/api';
+
+import Loader from 'components/Loader';
 import s from './Reviews.module.css';
 
 const GetReviews = () => {

@@ -19,5 +19,4 @@
 .link:focus,
 .link:hover {
   color: var(--bright-accent);
-  /* font-size: 18px; */
 }
